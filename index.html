@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر ملصقاتي | أكثر من 100 تصميم رايق</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- الشريط العلوي -->
+    <header class="navbar">
+        <div class="logo">ملصقاتي <span>Studio</span></div>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث بين أكثر من 100 ملصق...">
+        </div>
+        <button class="cart-btn" id="openCartBtn">
+            السلة <span class="badge" id="cartCount">0</span>
+        </button>
+    </header>
+
+    <!-- القسم الترحيبي -->
+    <section class="hero">
+        <span class="pill-tag">✨ مكتبة ضخمة تضم أكثر من 100 ملصق فينيل أصلي</span>
+        <h1>زين لابتوبك، سيارتك، ومكتبك بذوقك الخاص</h1>
+        <p>مقاومة للماء، ضد الشمس، وثابتة لا تترك أثراً عند إزالتها.</p>
+    </section>
+
+    <!-- أزرار الفلترة الأنيقة -->
+    <section class="filters">
+        <button class="filter-btn active" data-category="all">الكل (100+)</button>
+        <button class="filter-btn" data-category="tech">تقنية وبرمجة 💻</button>
+        <button class="filter-btn" data-category="cars">سيارات وتعديل 🏎️</button>
+        <button class="filter-btn" data-category="anime">أنمي ومانغا ⚡</button>
+        <button class="filter-btn" data-category="gaming">ألعاب وبلايستيشن 🎮</button>
+        <button class="filter-btn" data-category="funny">ميمز وعبارات 😂</button>
+    </section>
+
+    <!-- شبكة المنتجات -->
+    <main class="products-grid" id="productsGrid"></main>
+
+    <!-- سلة التسوق والدفع -->
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>سلة المشتريات</h2>
+            <button class="close-btn" id="closeCartBtn">✕</button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <p class="empty-msg">سلتك لا تزال فارغة..</p>
+        </div>
+
+        <div class="checkout-form" id="checkoutFormSection" style="display: none;">
+            <h3>بيانات التوصيل</h3>
+            <input type="text" id="buyerName" placeholder="الاسم الكامل" class="form-input">
+            <input type="tel" id="buyerPhone" placeholder="رقم الجوال (05XXXXXXXX)" class="form-input">
+            <input type="text" id="buyerAddress" placeholder="المدينة والحي" class="form-input">
+        </div>
+
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="total-row">
+                <span>الإجمالي الشامل</span>
+                <span id="cartTotal">0 ر.س</span>
+            </div>
+            
+            <div class="payment-actions">
+                <button class="apple-pay-btn" id="applePayBtn">
+                    الدفع عبر <span> Pay</span>
+                </button>
+                <button class="whatsapp-btn" id="whatsappBtn">
+                    طلب عبر الواتساب (دفع عند الاستلام)
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- نافذة محاكاة Apple Pay -->
+    <div class="apple-modal" id="appleModal">
+        <div class="apple-sheet">
+            <div class="apple-sheet-header">
+                <span class="apple-logo"> Pay</span>
+                <button class="cancel-apple" id="cancelAppleBtn">إلغاء</button>
+            </div>
+            <div class="apple-details">
+                <div class="apple-row">
+                    <span>المتجر</span>
+                    <strong>متجر ملصقاتي Studio</strong>
+                </div>
+                <div class="apple-row">
+                    <span>البطاقة</span>
+                    <strong>مدى •••• 4829</strong>
+                </div>
+                <div class="apple-row total">
+                    <span>المبلغ الإجمالي</span>
+                    <strong id="appleModalTotal">0 ر.س</strong>
+                </div>
+            </div>
+            <div class="face-id-box" id="faceIdBox">
+                <div class="face-icon">🙂</div>
+                <p id="appleStatusText">اضغط للتأكيد ببصمة الوجه (Face ID)</p>
+                <button class="confirm-pay-btn" id="confirmApplePayBtn">تأكيد الدفع الآن</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
